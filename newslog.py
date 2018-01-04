@@ -19,7 +19,7 @@ query_authors = """SELECT authors.name, count(*) AS views
            INNER JOIN log
            ON log.path LIKE concat('/article/%', articles.slug)
            GROUP BY authors.name
-           ORDER BY views DESCLIMIT 3;"""
+           ORDER BY views DESC LIMIT 3;"""
 
 # On which days did more than 1 percent of requests lead to errors?
 query_errors = """SELECT requests.date,
@@ -51,7 +51,7 @@ def get_popular_articles():
     print('\n \n ----MOST POPULAR ARTICLES ---- \n')
 
     for article in popular_articles:
-        print "%s ---- %s views" % (article[0], article[1])
+        print("%s ---- %s views" % (article[0], article[1]))
 
 
 # Get the most popular views.
@@ -60,7 +60,7 @@ def get_popular_authors():
     print('\n \n ----MOST POPULAR AUTHORS----- \n')
 
     for author in popular_authors:
-        print "%s ----- %s views" % (author[0], author[1])
+        print("%s ----- %s views" % (author[0], author[1]))
 
 
 # Get the days with most 404 errors.
@@ -69,7 +69,7 @@ def get_day_errors():
     print('\n \n ----DAY WITH MOST ERRORS---- \n')
 
     for error in day_errors:
-        print "%s ---- %s percent" % (error[0], error[1])
+        print("%s ---- %s percent" % (error[0], error[1]))
 
 
 # Print out the results
