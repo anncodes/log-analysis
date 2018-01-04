@@ -50,7 +50,7 @@ def db_query(query):
 # Get the most popular views.
 def get_popular_articles():
     popular_articles = db_query(query_articles)
-    print('\n \n ----MOST POPULAR ARTICLES ---- \n')
+    print("\n ----MOST POPULAR ARTICLES ---- \n")
 
     for article in popular_articles:
         print("%s ---- %s views" % (article[0], article[1]))
@@ -59,7 +59,7 @@ def get_popular_articles():
 # Get the most popular views.
 def get_popular_authors():
     popular_authors = db_query(query_authors)
-    print('\n \n ----MOST POPULAR AUTHORS----- \n')
+    print("\n \n ----MOST POPULAR AUTHORS----- \n")
 
     for author in popular_authors:
         print("%s ----- %s views" % (author[0], author[1]))
@@ -68,7 +68,7 @@ def get_popular_authors():
 # Get the days with most 404 errors.
 def get_day_errors():
     day_errors = db_query(query_errors)
-    print('\n \n ----DAY WITH MOST ERRORS---- \n')
+    print("\n \n ----DAY WITH MOST ERRORS---- \n")
 
     for error in day_errors:
         print("%s ---- %s percent" % (error[0], error[1]))
